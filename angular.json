@@ -32,7 +32,11 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/bootstrap.css",
+              "node_modules/bootstrap/dist/bootstrap-grid.css",
+              "node_modules/bootstrap/dist/bootstrap-reboot.css",
+              "node_modules/bootstrap/dist/bootstrap-utilities.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -103,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7e1df1e4-f231-400b-9e1b-97438ac7bd21"
   }
 }
