@@ -33,10 +33,10 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/bootstrap.css",
-              "node_modules/bootstrap/dist/bootstrap-grid.css",
-              "node_modules/bootstrap/dist/bootstrap-reboot.css",
-              "node_modules/bootstrap/dist/bootstrap-utilities.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap/dist/css/bootstrap-grid.css",
+              "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
+              "node_modules/bootstrap/dist/css/bootstrap-utilities.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
