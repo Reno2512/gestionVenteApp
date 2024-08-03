@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ColDef} from "ag-grid-community";
 import {AgGridAngular} from "ag-grid-angular";
+import {CrudService} from "../service/crud.service";
 
 @Component({
   selector: 'app-vente-list',
@@ -29,7 +30,7 @@ export class VenteListComponent implements OnInit{
     { field: "price" },
     { field: "electric" }
   ];
-  constructor() {
+  constructor(private crudService:CrudService) {
   }
   ngOnInit(): void {
   }

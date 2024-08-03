@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CrudService} from "../service/crud.service";
 
 @Component({
   selector: 'app-vente-form',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './vente-form.component.html',
   styleUrl: './vente-form.component.scss'
 })
-export class VenteFormComponent {
+export class VenteFormComponent implements OnInit{
+  constructor(private crudService: CrudService) {
+  }
+  ngOnInit(): void {
+  }
 
 }
