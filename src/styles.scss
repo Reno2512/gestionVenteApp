@@ -1,5 +1,11 @@
 @import "../node_modules/ag-grid-community/styles/ag-grid.css";
 /* Quartz Theme Specific CSS */
 @import "../node_modules/ag-grid-community/styles/ag-theme-alpine.css";
+@import "../node_modules/ag-grid-community/styles/ag-theme-quartz.css";
 
 
+.header-cell{
+  background-color: #009879;
+  color: white;
+  text-align: left;
+}

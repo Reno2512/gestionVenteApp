@@ -14,25 +14,49 @@ import {CrudService} from "../service/crud.service";
 })
 export class VenteListComponent implements OnInit{
   // Row Data: The data to be displayed.
-  rowData = [
-    { make: "Tesla", model: "Model Y", price: 64950, electric: true },
-    { make: "Ford", model: "F-Series", price: 33850, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-  ];
+  rowData: any = [];
+  gridOption = {
+    rowHeight: 50
+  }
   frameworkComponent = {
     customCellRenderer: VenteListComponent
   };
 
   // Column Definitions: Defines the columns to be displayed.
   colDefs: ColDef[] = [
-    { field: "make" },
-    { field: "model" },
-    { field: "price" },
-    { field: "electric" }
+    { field: "v_id", headerName: "Id", sortable:true, headerClass:"header-cell", filter:"AgNumberColumnFilter" },
+    { field: "v_montantTotal", headerName: "Montant total", sortable:true, headerClass:"header-cell", filter:"AgNumberColumnFilter" },
+    { field: "v_reference", headerName: "reference", sortable:true, headerClass:"header-cell", filter:"agNumberColumnFilter" },
+    { field: "date", headerName: "Date", sortable:true, headerClass:"header-cell" },
+    { field: "", headerName: "Action", headerClass:"header-cell", width:
+      250, cellRenderer: this.actionRender },
   ];
+
+  venteList: any = [];
+  venteListSubscribe: any;
   constructor(private crudService:CrudService) {
   }
   ngOnInit(): void {
+    this.getVentelist();
+  }
+
+  getVentelist(){
+    this.venteListSubscribe = this.crudService.loadVente().subscribe(res =>{
+      this.venteList = res;
+      console.log('res', res);
+      this.rowData = res;
+    })
+  }
+
+  actionRender(params: any){
+
+    let div = document.createElement('div');
+    let htmlCode = '<button type="button" class="btn btn-success">View</button>' +
+    '<button type="button" class="btn btn-warning">Update</button>' +
+    '<button type="button" class="btn btn-danger">Delete</button>'
+    div.innerHTML = htmlCode;
+    return div;
+
   }
 
 }

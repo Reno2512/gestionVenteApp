@@ -10,7 +10,7 @@ import {AgGridModule} from "ag-grid-angular";
   imports: [
     CommonModule,
     CrudRoutingModule,
-    AgGridModule
+    AgGridModule,
   ]
 })
 export class CrudModule { }
